@@ -8,7 +8,7 @@ function showSlide(className) {
   if (!sessionStorage.getItem('visitedWelcomePage')) {
     // Set the flag for the current session
     sessionStorage.setItem('visitedWelcomePage', 'true');
-    window.location.href = 'welcome.html';
+    window.location.href = 'index.html';
   }
   
   // Event listener for the "Next" button click
@@ -32,7 +32,7 @@ function showSlide(className) {
   
   // Automatically redirect back to home.html if the user goes back to welcome.html
   window.onpopstate = function () {
-    if (document.location.href.includes('welcome.html')) {
+    if (document.location.href.includes('index.html')) {
       window.history.replaceState(null, '', 'home.html');
     }
   };
@@ -41,8 +41,8 @@ function showSlide(className) {
   const userName = localStorage.getItem('userName');
   const currentURL = document.location.href;
   if (!userName && currentURL.includes('home.html')) {
-    window.location.href = 'welcome.html';
-  } else if (userName && currentURL.includes('welcome.html')) {
+    window.location.href = 'index.html';
+  } else if (userName && currentURL.includes('index.html')) {
     window.location.href = 'home.html';
   }
 
